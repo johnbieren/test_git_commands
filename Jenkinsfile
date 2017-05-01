@@ -13,13 +13,12 @@ node('master') {
     stage('rpmbuild-trigger')
       checkout scm
 
-      sh """{
-
-            set -xuo pipefail
-
-            ls
-            ls ci-pipeline
-
+      sh 'ls'
+      sh 'ls ci-pipeline'
+//      sh """{
+//
+//            set -xuo pipefail
+//
 //            # Write script to parse fields (can likely be improved)
 //            cat << EOF > ${WORKSPACE}/parse_fedmsg.py
 //            #!/bin/env python
@@ -41,5 +40,5 @@ node('master') {
 //            if [ -n "$CI_MESSAGE" ]; then
 //                echo $CI_MESSAGE | ${WORKSPACE}/parse_fedmsg.py > fedmsg_fields.txt
 //            fi
-}"""
+//}"""
 }
