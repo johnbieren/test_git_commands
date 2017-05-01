@@ -6,10 +6,16 @@ node('master') {
          selector: "topic = 'org.fedoraproject.prod.git.receive'"
     echo "CI_MESSAGE = " + CI_MESSAGE
 
+    scm {
+        github('CentOS-PaaS-SIG/ci-pipeline', 'master')
+    }
+
     stage('rpmbuild-trigger')
       sh """{
 
             set -xuo pipefail
+
+            ls ci-pipeline
 
             # Write script to parse fields (can likely be improved)
             cat << EOF > ${WORKSPACE}/parse_fedmsg.py
