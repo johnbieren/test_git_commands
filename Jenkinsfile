@@ -32,3 +32,4 @@ node('fedora-atomic') {
                 echo $CI_MESSAGE | ${WORKSPACE}/parse_fedmsg.py > fedmsg_fields.txt
             fi
 }"""
+}
