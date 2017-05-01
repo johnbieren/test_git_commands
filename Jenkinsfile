@@ -1,4 +1,5 @@
-node('fedora-atomic') {
+//node('fedora-atomic') {
+node('master') {
     // Wait for message and store message content in variable
     def CI_MESSAGE = waitForCIMessage \
          providerName: 'fedora-fedmsg', \
