@@ -8,7 +8,7 @@ node('fedora-atomic') {
     stage('rpmbuild-trigger')
       sh """{
 
-et -xuo pipefail
+            set -xuo pipefail
 
             # Write script to parse fields (can likely be improved)
             cat << EOF > ${{WORKSPACE}}/parse_fedmsg.py
