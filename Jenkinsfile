@@ -11,6 +11,8 @@ node('master') {
     }
 
     stage('rpmbuild-trigger')
+      checkout scm
+
       sh """{
 
             set -xuo pipefail
