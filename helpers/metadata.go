@@ -3,6 +3,11 @@ package helpers
 import "sigs.k8s.io/controller-runtime/pkg/client"
 
 // HasAnnotation checks if a given annotation exists
+
+
+
+
+
 func HasAnnotation(object client.Object, annotation string) bool {
 	_, found := object.GetAnnotations()[annotation]
 
